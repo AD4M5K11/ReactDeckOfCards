@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import './deckOfCards/deckOfCards.css';
+import Deck from './deckOfCards/deckOfCards'
 
-function App() {
+
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Deck />
     </div>
   );
 }
 
-export default App;
+const deck = new Deck()
+console.log(deck)
+
+const shuffledDeck = new Deck()
+shuffledDeck.shuffle();
+console.log(shuffledDeck)
+
+const cardTake = new Deck()
+cardTake.takeCard()
+console.log(cardTake)
+
+const resetDeck = new Deck()
+resetDeck.reset()
+console.log(resetDeck)
+
+
